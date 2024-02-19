@@ -1,7 +1,6 @@
 package com.java.querydsl;
 
 import com.java.querydsl.entity.Member;
-import com.java.querydsl.entity.QMember;
 import com.java.querydsl.entity.Team;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
