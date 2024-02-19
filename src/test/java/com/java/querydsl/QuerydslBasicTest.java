@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import static com.java.querydsl.entity.QMember.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
@@ -56,13 +57,10 @@ public class QuerydslBasicTest {
 
     @Test
     public void startQuerydsl() {
-        // member1을 찾아라.
-        QMember m = new QMember("m");
-
         Member findMember = queryFactory
-                .select(m)
-                .from(m)
-                .where(m.username.eq("member1"))
+                .select(member)
+                .from(member)
+                .where(member.username.eq("member1"))
                 .fetchOne();
 
         assertThat(findMember.getUsername()).isEqualTo("member1");
